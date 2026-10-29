@@ -1,2 +1,2 @@
 # Inventory Service
-Version 1.0 - Maintained by Alice.
+Version 1.0 - Maintained by Charlie.

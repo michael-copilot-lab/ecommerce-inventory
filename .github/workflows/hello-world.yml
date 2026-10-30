@@ -1,4 +1,3 @@
-// Write a GitHub Actions workflow that runs on push and echoes Hello World
 on: [push]
 jobs:
   echo-hello-world:

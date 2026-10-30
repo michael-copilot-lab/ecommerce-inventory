@@ -1,3 +1,14 @@
+# Use jq to extract the version from package.json and fail the step if it is '1.0.0'
+steps:
+  - name: Check package.json version
+    id: check_version
+    run: |
+      VERSION=$(jq -r '.version' package.json)
+      echo "Package version: $VERSION"
+      if [ "$VERSION" = "1.0.0" ]; then
+        echo "Error: Version is 1.0.0, failing the step."
+        exit 1
+      fi
 jobs:
   call-shared-ci:
     uses: your-username/shared-actions-org/.github/workflows/node-ci-reusable.yml@main

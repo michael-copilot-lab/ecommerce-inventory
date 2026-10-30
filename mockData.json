@@ -1,0 +1,37 @@
+[
+  {
+    "id": "PROD-001",
+    "name": "Wireless Noise-Canceling Headphones",
+    "price": 299.99,
+    "category": "Electronics",
+    "inStock": true
+  },
+  {
+    "id": "PROD-002",
+    "name": "Smartwatch with Fitness Tracking",
+    "price": 199.99,
+    "category": "Wearables",
+    "inStock": false
+  },
+  {
+    "id": "PROD-003",
+    "name": "4K Ultra HD Smart TV",
+    "price": 799.99,
+    "category": "Electronics",
+    "inStock": true
+  },
+  {
+    "id": "PROD-004",
+    "name": "Bluetooth Portable Speaker",
+    "price": 49.99,
+    "category": "Audio",
+    "inStock": true
+  },
+  {
+    "id": "PROD-005",
+    "name": "Gaming Laptop with High Performance GPU",
+    "price": 1499.99,
+    "category": "Computers",
+    "inStock": false
+  }
+]

@@ -1,0 +1,23 @@
+name: Branch Link
+
+on:
+  push:
+    branches:
+      - '**'
+
+jobs:
+  validate-branch:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Validate branch name
+        shell: bash
+        run: |
+          BRANCH="${{ github.ref_name }}"
+          echo "Current branch: $BRANCH"
+
+          if ! [[ "$BRANCH" =~ ^(feat|bug|hotfix)/ ]]; then
+            echo "Error: branch '$BRANCH' is not allowed. Branches must start with 'feat/', 'bug/', or 'hotfix/'."
+            exit 1
+          fi
+
+          echo "Branch name is valid."

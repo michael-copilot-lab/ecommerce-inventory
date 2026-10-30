@@ -11,3 +11,5 @@ function findMax(arr) {
     }
     return max;
 }
+
+const bugFix = true;

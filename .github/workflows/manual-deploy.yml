@@ -1,0 +1,32 @@
+name: Manual Deploy
+
+on:
+  workflow_dispatch:
+    inputs:
+      run_migrations:
+        description: 'Run database migrations'
+        required: false
+        default: false
+        type: boolean
+      environment:
+        description: 'Target environment'
+        required: true
+        type: choice
+        options:
+          - staging
+          - production
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment: ${{ inputs.environment }}
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Show selected inputs
+        run: |
+          echo "Run migrations: ${{ inputs.run_migrations }}"
+          echo "Environment: ${{ inputs.environment }}"
+      - run: echo "Deploying to ${{ github.event.inputs.environment }}. Run migrations: ${{ github.event.inputs.run_migrations }}"
